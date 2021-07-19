@@ -10,7 +10,6 @@ function App() {
 		async function getFoods() {
 			try {
 				const foods = await fetch(URL).then((response) => response.json());
-				console.log(foods);
 				setFoodsState({ foods });
 			} catch (error) {
 				console.log(error);
@@ -19,21 +18,40 @@ function App() {
 		getFoods();
 	}, []);
 
- async function handleDelete(foodId) {
-    try {
-      const foods = await fetch(`URL/${foodId}`, {
-        method: 'DELETE',
-      }).then(res => res.json());
-    setFoodsState({ foods });
-    } catch (error) {
-      console.log(error)
-    }
-  }
+	async function handleAdd(formInputs) {
+		try {
+			const foods = await fetch(URL, {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'Application/json',
+				},
+				body: JSON.stringify(formInputs),
+			}).then((res) => res.json());
 
+			setFoodsState({ foods });
+		} catch (error) {
+			console.log(error);
+		}
+	}
+
+	async function handleDelete(foodId) {
+		try {
+			const foods = await fetch(`${URL}/${foodId}`, {
+				method: 'DELETE',
+			}).then((res) => res.json());
+			setFoodsState({ foods });
+		} catch (error) {
+			console.log(error);
+		}
+	}
 
 	return (
 		<div className="App">
-			<Index foods={foodsState.foods} handleDelete={handleDelete}/>
+			<Index
+				foods={foodsState.foods}
+				handleDelete={handleDelete}
+				handleAdd={handleAdd}
+			/>
 		</div>
 	);
 }
