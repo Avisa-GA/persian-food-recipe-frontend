@@ -3,7 +3,7 @@ import "./App.css";
 
 function App() {
   const [foodsState, setFoodsState] = useState({ foods: [] });
-  const URL = "http://localhost:3000/foods";
+  const URL = "https://persian-food-backend.herokuapp.com/foods";
 
   useEffect(() => {
     async function getFoods() {
