@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Food({ food }) {
+export default function Food({ food, handleDelete }) {
 	return (
 		<div className="container">
 			<img
@@ -19,6 +19,7 @@ export default function Food({ food }) {
 					<p key={index}>{direction}</p>
 				))}
 			</div>
+			<button onClick={() => handleDelete(food.id)}>X</button>
 		</div>
 	);
 }
