@@ -19,9 +19,21 @@ function App() {
 		getFoods();
 	}, []);
 
+ async function handleDelete(foodId) {
+    try {
+      const foods = await fetch(`URL/${foodId}`, {
+        method: 'DELETE',
+      }).then(res => res.json());
+    setFoodsState({ foods });
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+
 	return (
 		<div className="App">
-			<Index foods={foodsState.foods} />
+			<Index foods={foodsState.foods} handleDelete={handleDelete}/>
 		</div>
 	);
 }
