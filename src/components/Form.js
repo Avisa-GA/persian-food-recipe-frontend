@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-export default function Form({ handleAdd }) {
+export default function Form(props) {
+
 	const [formState, setFormState] = useState({
 		title: '',
 		img: '',
@@ -8,6 +9,12 @@ export default function Form({ handleAdd }) {
 		directions: [],
 		url: '',
 	});
+
+	useEffect(() => {
+		if (PaymentResponse.foods) {
+			setFormState(props.foods);
+		}
+	}, [props.foods]);
 
 	function handleChange(event) {
 		setFormState((prevState) => ({
