@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import Input from './Input';
-import KitchenIcon from '@material-ui/icons/Kitchen';
-import Container from '@material-ui/core/Container'
-import IconButton from '@material-ui/core/IconButton';
-import RemoveIcon from '@material-ui/icons/Remove';
-import AddIcon from '@material-ui/icons/Add';
+// import KitchenIcon from '@material-ui/icons/Kitchen';
+// import Container from '@material-ui/core/Container'
+// import IconButton from '@material-ui/core/IconButton';
+// import RemoveIcon from '@material-ui/icons/Remove';
+// import AddIcon from '@material-ui/icons/Add';
 
 export default function Form(props) {
 	const [formState, setFormState] = useState({
@@ -70,10 +70,14 @@ export default function Form(props) {
 	};
 
 	return (
-
 		<div>
-			<form className="card" style={{
-				width: "400px", marginLeft: "30%", padding: "5%" }}>
+			<form
+				className="card"
+				style={{
+					width: '400px',
+					marginLeft: '30%',
+					padding: '5%',
+				}}>
 				<h5>New Food Recipe</h5>
 				<Input
 					type="text"
@@ -93,7 +97,7 @@ export default function Form(props) {
 				/>
 
 				{formState.ingredients.map((ingredient, index) => (
-					<Container style={{display: "flex", marginRight: "20%"}} key={index}>
+					<div style={{ display: 'flex', marginRight: '20%' }} key={index}>
 						<input
 							type="text"
 							onChange={(e) => handleChange(e, index)}
@@ -102,34 +106,62 @@ export default function Form(props) {
 							value={formState.ingredients[index]}
 							id="ingredients"
 						/>
-						<button style={{width: "50px"}}
-							name="ingredients"
-							type="text"
+						<button
+							style={{ width: '50px' }}
 							onClick={(e) => handleAddInput(e)}
-							className="btn-floating btn-tiny waves-effect waves-light green" >
-							<i style={{width: "28px", height: "28px"}} className="material-icons">add</i>
-						</button>
-						<br />
-						<br />
-						<button style={{width: "50px"}}
 							name="ingredients"
 							type="text"
-							index={index}
-							onClick={(e) => handleRemoveInput(e, index)}
-							className="btn-floating btn-tiny waves-effect waves-light red" >
-							<i style={{width: "28px", height: "28px"}} className="material-icons">remove</i>
+							className="btn-floating btn-tiny waves-effect waves-light green">
+							+
 						</button>
-					</Container>
+						<br />
+						<br />
+						<button
+							style={{ width: '50px' }}
+							type="text"
+							onClick={(e) => handleRemoveInput(e, index)}
+							disabled={index === 0 ? true : false}
+							name="ingredients"
+							index={index}
+							className="btn-floating btn-tiny waves-effect waves-light red">
+							-
+						</button>
+					</div>
+				))}
+				<br />
+				{formState.directions.map((direction, index) => (
+					<div style={{ display: 'flex', marginRight: '20%' }} key={index}>
+						<input
+							type="text"
+							onChange={(e) => handleChange(e, index)}
+							placeholder="Add directions"
+							name="directions"
+							value={formState.directions[index]}
+							id="directions"
+						/>
+						<button
+							style={{ width: '50px' }}
+							onClick={(e) => handleAddInput(e)}
+							name="directions"
+							type="text"
+							className="btn-floating btn-tiny waves-effect waves-light green">
+							+
+						</button>
+						<br />
+						<br />
+						<button
+							style={{ width: '50px' }}
+							type="text"
+							onClick={(e) => handleRemoveInput(e, index)}
+							disabled={index === 0 ? true : false}
+							name="directions"
+							index={index}
+							className="btn-floating btn-tiny waves-effect waves-light red">
+							-
+						</button>
+					</div>
 				))}
 
-				<Input
-					type="text"
-					handleChange={handleChange}
-					placeholder="Add directions"
-					name="directions"
-					value={formState.directions}
-					id="directions"
-				/>
 				<Input
 					type="text"
 					handleChange={handleChange}
@@ -141,9 +173,10 @@ export default function Form(props) {
 				<button
 					className="btn waves-effect waves-light"
 					type="submit"
-					onClick={handleSubmit}> <i className="material-icons right">send</i>
-				{props.food ? 'Edit' : 'Add'}</button>
- 
+					onClick={handleSubmit}>
+					<i className="material-icons right">send</i>
+					{props.food ? 'Edit' : 'Add'}
+				</button>
 			</form>
 		</div>
 	);
