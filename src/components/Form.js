@@ -7,6 +7,7 @@ import Input from './Input';
 // import AddIcon from '@material-ui/icons/Add';
 
 export default function Form(props) {
+	const [message, setMessage] = useState('');
 	const [formState, setFormState] = useState({
 		title: '',
 		img: '',
@@ -39,16 +40,19 @@ export default function Form(props) {
 
 	function handleSubmit(event) {
 		event.preventDefault();
-		console.log(formState);
-		console.log(event.target);
-		props.handleAdd(formState);
-		setFormState({
-			title: '',
-			img: '',
-			ingredients: [''],
-			directions: [''],
-			url: '',
-		});
+		const { title, img, url, ingredients, directions } = formState;
+		if (!title || !img || !url || !ingredients[0] || !directions[0]) {
+			setMessage('Enter all fields');
+		} else {
+			props.handleAdd(formState);
+			setFormState({
+				title: '',
+				img: '',
+				ingredients: [''],
+				directions: [''],
+				url: '',
+			});
+		}
 	}
 
 	const handleAddInput = (e) => {
@@ -71,6 +75,7 @@ export default function Form(props) {
 
 	return (
 		<div>
+			{message && <p>{message}</p>}
 			<form
 				className="card"
 				style={{
@@ -110,7 +115,7 @@ export default function Form(props) {
 							style={{ width: '50px' }}
 							onClick={(e) => handleAddInput(e)}
 							name="ingredients"
-							type="text"
+							type="button"
 							className="btn-floating btn-tiny waves-effect waves-light green">
 							+
 						</button>
@@ -118,7 +123,7 @@ export default function Form(props) {
 						<br />
 						<button
 							style={{ width: '50px' }}
-							type="text"
+							type="button"
 							onClick={(e) => handleRemoveInput(e, index)}
 							disabled={index === 0 ? true : false}
 							name="ingredients"
@@ -143,7 +148,7 @@ export default function Form(props) {
 							style={{ width: '50px' }}
 							onClick={(e) => handleAddInput(e)}
 							name="directions"
-							type="text"
+							type="button"
 							className="btn-floating btn-tiny waves-effect waves-light green">
 							+
 						</button>
@@ -151,7 +156,7 @@ export default function Form(props) {
 						<br />
 						<button
 							style={{ width: '50px' }}
-							type="text"
+							type="button"
 							onClick={(e) => handleRemoveInput(e, index)}
 							disabled={index === 0 ? true : false}
 							name="directions"
