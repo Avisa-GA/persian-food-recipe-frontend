@@ -1,13 +1,15 @@
 import { useEffect, useState } from 'react';
+import Input from './Input';
 
 export default function Form(props) {
 	const [formState, setFormState] = useState({
 		title: '',
 		img: '',
-		ingredients: '',
-		directions: '',
+		ingredients: [],
+		directions: [],
 		url: '',
 	});
+
 
 	useEffect(() => {
 		if (props.foods) {
@@ -37,47 +39,47 @@ export default function Form(props) {
 	return (
 		<div>
 			<form onSubmit={handleSubmit}>
-				<input
+				<Input
 					type="text"
-					onChange={handleChange}
+					handleChange={handleChange}
 					placeholder="Add Title"
 					name="title"
 					value={formState.title}
 					id="title"
 				/>
-				<input
+				<Input
 					type="text"
-					onChange={handleChange}
+					handleChange={handleChange}
 					placeholder="Add Image"
 					name="img"
 					value={formState.img}
 					id="img"
 				/>
-				<input
+				<Input
 					type="text"
-					onChange={handleChange}
+					handleChange={handleChange}
 					placeholder="Add ingredients"
 					name="ingredients"
 					value={formState.ingredients}
 					id="ingredients"
 				/>
-				<input
+				<Input
 					type="text"
-					onChange={handleChange}
+					handleChange={handleChange}
 					placeholder="Add directions"
 					name="directions"
 					value={formState.directions}
 					id="directions"
 				/>
-				<input
+				<Input
 					type="text"
-					onChange={handleChange}
+					handleChange={handleChange}
 					placeholder="Add Url"
 					name="url"
 					value={formState.url}
 					id="url"
 				/>
-				<button type="submit">{props.food ? 'Edit' : 'Add'}</button>
+				<input type="submit" value={ props.food ? 'Edit' : 'Add' } />
 			</form>
 		</div>
 	);
