@@ -72,7 +72,9 @@ export default function Form(props) {
 	return (
 
 		<div>
-			<form>
+			<form className="card" style={{
+				width: "300px", marginLeft: "30%", padding: "5%" }}>
+				<h5>New Food Recipe</h5>
 				<Input
 					type="text"
 					handleChange={handleChange}
@@ -91,7 +93,7 @@ export default function Form(props) {
 				/>
 
 				{formState.ingredients.map((ingredient, index) => (
-					<Container key={index}>
+					<Container style={{display: "flex", marginRight: "20%"}} key={index}>
 						<input
 							type="text"
 							onChange={(e) => handleChange(e, index)}
@@ -100,20 +102,20 @@ export default function Form(props) {
 							value={formState.ingredients[index]}
 							id="ingredients"
 						/>
-						<button
+						<button style={{width: "100px"}}
 							name="ingredients"
 							type="text"
 							onClick={(e) => handleAddInput(e)}
-							className="btn-floating btn-large waves-effect waves-light green" >
-							<i class="material-icons">add</i>
+							className="btn-floating btn-tiny waves-effect waves-light green" >
+							<i style={{width: "48px", height: "48px"}} className="material-icons">add</i>
 						</button>
-						<button
+						<button style={{width: "100px"}}
 							name="ingredients"
 							type="text"
 							index={index}
 							onClick={(e) => handleRemoveInput(e, index)}
-							className="btn-floating btn-large waves-effect waves-light red" >
-							<i class="material-icons">remove</i>
+							className="btn-floating btn-tiny waves-effect waves-light red" >
+							<i style={{width: "48px", height: "48px"}} className="material-icons">remove</i>
 						</button>
 					</Container>
 				))}
@@ -134,11 +136,12 @@ export default function Form(props) {
 					value={formState.url}
 					id="url"
 				/>
-				<input
+				<button
+					className="btn waves-effect waves-light"
 					type="submit"
 					onClick={handleSubmit}
-					value={props.food ? 'Edit' : 'Add'}
-				/>
+				>{props.food ? 'Edit' : 'Add'}</button>
+ 
 			</form>
 		</div>
 	);
