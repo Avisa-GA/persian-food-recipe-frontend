@@ -1,6 +1,10 @@
 import { useEffect, useState } from 'react';
 import Input from './Input';
 import KitchenIcon from '@material-ui/icons/Kitchen';
+import Container from '@material-ui/core/Container'
+import IconButton from '@material-ui/core/IconButton';
+import RemoveIcon from '@material-ui/icons/Remove';
+import AddIcon from '@material-ui/icons/Add';
 
 export default function Form(props) {
 	const [formState, setFormState] = useState({
@@ -66,14 +70,9 @@ export default function Form(props) {
 	};
 
 	return (
-<<<<<<< HEAD
-		<div className="card" style={{
-			width: "400px"}}>
-			<form onSubmit={handleSubmit}>
-=======
+
 		<div>
 			<form>
->>>>>>> 2793bfae746ceda155339887c5c16e92ce60cfd3
 				<Input
 					type="text"
 					handleChange={handleChange}
@@ -92,7 +91,7 @@ export default function Form(props) {
 				/>
 
 				{formState.ingredients.map((ingredient, index) => (
-					<div key={index} style={{ backgroundColor: 'red', height: '100px' }}>
+					<Container key={index}>
 						<input
 							type="text"
 							onChange={(e) => handleChange(e, index)}
@@ -101,7 +100,6 @@ export default function Form(props) {
 							value={formState.ingredients[index]}
 							id="ingredients"
 						/>
-
 						<button
 							name="ingredients"
 							type="text"
@@ -115,7 +113,7 @@ export default function Form(props) {
 							onClick={(e) => handleRemoveInput(e, index)}>
 							-
 						</button>
-					</div>
+					</Container>
 				))}
 
 				<Input
