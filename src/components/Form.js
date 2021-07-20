@@ -1,10 +1,5 @@
 import { useEffect, useState } from 'react';
 import Input from './Input';
-// import KitchenIcon from '@material-ui/icons/Kitchen';
-// import Container from '@material-ui/core/Container'
-// import IconButton from '@material-ui/core/IconButton';
-// import RemoveIcon from '@material-ui/icons/Remove';
-// import AddIcon from '@material-ui/icons/Add';
 
 export default function Form(props) {
 	const [formState, setFormState] = useState({
@@ -14,13 +9,11 @@ export default function Form(props) {
 		directions: [''],
 		url: '',
 	});
-
 	useEffect(() => {
 		if (props.foods) {
 			setFormState(props.foods);
 		}
 	}, [props.foods]);
-
 	function handleChange(event, index = null) {
 		if (index !== null) {
 			const arr = [...formState[event.target.name]];
@@ -36,7 +29,6 @@ export default function Form(props) {
 			}));
 		}
 	}
-
 	function handleSubmit(event) {
 		event.preventDefault();
 		console.log(formState);
@@ -50,7 +42,6 @@ export default function Form(props) {
 			url: '',
 		});
 	}
-
 	const handleAddInput = (e) => {
 		e.preventDefault();
 		setFormState((prevState) => ({
@@ -58,7 +49,6 @@ export default function Form(props) {
 			[e.target.name]: [...formState[e.target.name], ''],
 		}));
 	};
-
 	const handleRemoveInput = (e, index) => {
 		e.preventDefault();
 		setFormState((prevState) => ({
@@ -68,7 +58,6 @@ export default function Form(props) {
 			),
 		}));
 	};
-
 	return (
 		<div>
 			<form
@@ -95,7 +84,6 @@ export default function Form(props) {
 					value={formState.img}
 					id="img"
 				/>
-
 				{formState.ingredients.map((ingredient, index) => (
 					<div style={{ display: 'flex', marginRight: '20%' }} key={index}>
 						<input
@@ -161,7 +149,6 @@ export default function Form(props) {
 						</button>
 					</div>
 				))}
-
 				<Input
 					type="text"
 					handleChange={handleChange}
