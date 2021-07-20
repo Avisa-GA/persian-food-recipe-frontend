@@ -37,6 +37,20 @@ function App() {
 		}
 	}
 
+	async function handleUpdate(formInputs, id) {
+		try {
+			const { title, ingredients, img, directions, url } = formInputs;
+			const foods = await fetch(`${URL}/${id}`, {
+				method: 'PUT',
+				headers: { 'Content-type': 'Application/json' },
+				body: JSON.stringify({ title, ingredients, img, directions, url }),
+			}).then((response) => response.json());
+			setFoodsState({ foods });
+		} catch (err) {
+			console.log(err);
+		}
+	}
+
 	async function handleDelete(foodId) {
 		try {
 			const foods = await fetch(`${URL}/${foodId}`, {
@@ -61,7 +75,13 @@ function App() {
 				</Route>
 				<Route
 					path="/:id"
-					render={(rp) => <Show foods={foodsState.foods} {...rp} />}
+					render={(rp) => (
+						<Show
+							foods={foodsState.foods}
+							{...rp}
+							handleUpdate={handleUpdate}
+						/>
+					)}
 				/>
 			</Switch>
 		</div>
