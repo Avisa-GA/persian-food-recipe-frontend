@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 // import 'materialize-css/dist/css/materialize.min.css';
 import './App.css';
 import Index from './components/Index';
+import Show from './components/Show';
+import { Switch, Route } from 'react-router-dom';
 
 function App() {
 	const [foodsState, setFoodsState] = useState({ foods: [] });
@@ -48,11 +50,20 @@ function App() {
 
 	return (
 		<div className="App">
-			<Index
-				foods={foodsState.foods}
-				handleDelete={handleDelete}
-				handleAdd={handleAdd}
-			/>
+			<Switch>
+				<Route exact path="/">
+					<Index
+						URL={URL}
+						foods={foodsState.foods}
+						handleDelete={handleDelete}
+						handleAdd={handleAdd}
+					/>
+				</Route>
+				<Route
+					path="/:id"
+					render={(rp) => <Show foods={foodsState.foods} {...rp} />}
+				/>
+			</Switch>
 		</div>
 	);
 }
