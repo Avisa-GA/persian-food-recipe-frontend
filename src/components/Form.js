@@ -5,11 +5,10 @@ export default function Form(props) {
 	const [formState, setFormState] = useState({
 		title: '',
 		img: '',
-		ingredients: [],
-		directions: [],
+		ingredients: [''],
+		directions: [''],
 		url: '',
 	});
-
 
 	useEffect(() => {
 		if (props.foods) {
@@ -17,28 +16,57 @@ export default function Form(props) {
 		}
 	}, [props.foods]);
 
-	function handleChange(event) {
-		setFormState((prevState) => ({
-			...prevState,
-			[event.target.id]: event.target.value,
-		}));
+	function handleChange(event, index = null) {
+		if (index !== null) {
+			const arr = [...formState[event.target.name]];
+			arr[index] = event.target.value;
+			setFormState((prevState) => ({
+				...prevState,
+				[event.target.name]: arr,
+			}));
+		} else {
+			setFormState((prevState) => ({
+				...prevState,
+				[event.target.name]: event.target.value,
+			}));
+		}
 	}
 
 	function handleSubmit(event) {
 		event.preventDefault();
+		console.log(formState);
+		console.log(event.target);
 		props.handleAdd(formState);
 		setFormState({
 			title: '',
 			img: '',
-			ingredients: '',
-			directions: '',
+			ingredients: [''],
+			directions: [''],
 			url: '',
 		});
 	}
 
+	const handleAddInput = (e) => {
+		e.preventDefault();
+		setFormState((prevState) => ({
+			...prevState,
+			[e.target.name]: [...formState[e.target.name], ''],
+		}));
+	};
+
+	const handleRemoveInput = (e, index) => {
+		e.preventDefault();
+		setFormState((prevState) => ({
+			...prevState,
+			[e.target.name]: [...formState[e.target.name]].filter(
+				(item, id) => id !== index
+			),
+		}));
+	};
+
 	return (
 		<div>
-			<form onSubmit={handleSubmit}>
+			<form>
 				<Input
 					type="text"
 					handleChange={handleChange}
@@ -55,14 +83,34 @@ export default function Form(props) {
 					value={formState.img}
 					id="img"
 				/>
-				<Input
-					type="text"
-					handleChange={handleChange}
-					placeholder="Add ingredients"
-					name="ingredients"
-					value={formState.ingredients}
-					id="ingredients"
-				/>
+
+				{formState.ingredients.map((ingredient, index) => (
+					<div key={index} style={{ backgroundColor: 'red', height: '100px' }}>
+						<input
+							type="text"
+							onChange={(e) => handleChange(e, index)}
+							placeholder="Add ingredients"
+							name="ingredients"
+							value={formState.ingredients[index]}
+							id="ingredients"
+						/>
+
+						<button
+							name="ingredients"
+							type="text"
+							onClick={(e) => handleAddInput(e)}>
+							+
+						</button>
+						<button
+							name="ingredients"
+							type="text"
+							index={index}
+							onClick={(e) => handleRemoveInput(e, index)}>
+							-
+						</button>
+					</div>
+				))}
+
 				<Input
 					type="text"
 					handleChange={handleChange}
@@ -79,7 +127,11 @@ export default function Form(props) {
 					value={formState.url}
 					id="url"
 				/>
-				<input type="submit" value={ props.food ? 'Edit' : 'Add' } />
+				<input
+					type="submit"
+					onClick={handleSubmit}
+					value={props.food ? 'Edit' : 'Add'}
+				/>
 			</form>
 		</div>
 	);
