@@ -103,15 +103,17 @@ export default function Form(props) {
 						<button
 							name="ingredients"
 							type="text"
-							onClick={(e) => handleAddInput(e)}>
-							+
+							onClick={(e) => handleAddInput(e)}
+							className="btn-floating btn-large waves-effect waves-light green" >
+							<i class="material-icons">add</i>
 						</button>
 						<button
 							name="ingredients"
 							type="text"
 							index={index}
-							onClick={(e) => handleRemoveInput(e, index)}>
-							-
+							onClick={(e) => handleRemoveInput(e, index)}
+							className="btn-floating btn-large waves-effect waves-light red" >
+							<i class="material-icons">remove</i>
 						</button>
 					</Container>
 				))}
