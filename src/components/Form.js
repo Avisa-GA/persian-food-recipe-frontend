@@ -73,7 +73,7 @@ export default function Form(props) {
 
 		<div>
 			<form className="card" style={{
-				width: "300px", marginLeft: "30%", padding: "5%" }}>
+				width: "400px", marginLeft: "30%", padding: "5%" }}>
 				<h5>New Food Recipe</h5>
 				<Input
 					type="text"
@@ -102,20 +102,22 @@ export default function Form(props) {
 							value={formState.ingredients[index]}
 							id="ingredients"
 						/>
-						<button style={{width: "100px"}}
+						<button style={{width: "50px"}}
 							name="ingredients"
 							type="text"
 							onClick={(e) => handleAddInput(e)}
 							className="btn-floating btn-tiny waves-effect waves-light green" >
-							<i style={{width: "48px", height: "48px"}} className="material-icons">add</i>
+							<i style={{width: "28px", height: "28px"}} className="material-icons">add</i>
 						</button>
-						<button style={{width: "100px"}}
+						<br />
+						<br />
+						<button style={{width: "50px"}}
 							name="ingredients"
 							type="text"
 							index={index}
 							onClick={(e) => handleRemoveInput(e, index)}
 							className="btn-floating btn-tiny waves-effect waves-light red" >
-							<i style={{width: "48px", height: "48px"}} className="material-icons">remove</i>
+							<i style={{width: "28px", height: "28px"}} className="material-icons">remove</i>
 						</button>
 					</Container>
 				))}
@@ -139,8 +141,8 @@ export default function Form(props) {
 				<button
 					className="btn waves-effect waves-light"
 					type="submit"
-					onClick={handleSubmit}
-				>{props.food ? 'Edit' : 'Add'}</button>
+					onClick={handleSubmit}> <i className="material-icons right">send</i>
+				{props.food ? 'Edit' : 'Add'}</button>
  
 			</form>
 		</div>
