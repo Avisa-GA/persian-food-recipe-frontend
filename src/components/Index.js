@@ -3,6 +3,7 @@ import Foods from './Foods';
 import Form from './Form';
 
 export default function Index({ foods, handleDelete, handleAdd }) {
+	
 	return (
 		<div>
 			<Form handleAdd={handleAdd} />

@@ -28,7 +28,7 @@ function App() {
 				},
 				body: JSON.stringify(formInputs),
 			}).then((res) => res.json());
-
+			console.log(foods);
 			setFoodsState({ foods });
 		} catch (error) {
 			console.log(error);
