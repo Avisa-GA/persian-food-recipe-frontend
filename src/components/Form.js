@@ -11,8 +11,8 @@ export default function Form(props) {
 		url: '',
 	});
 	useEffect(() => {
-		if (props.foods) {
-			setFormState(props.foods);
+		if (props.food) {
+			setFormState(props.food);
 		}
 	}, [props.foods]);
 	function handleChange(event, index = null) {
@@ -32,18 +32,22 @@ export default function Form(props) {
 	}
 	function handleSubmit(event) {
 		event.preventDefault();
-		const { title, img, url, ingredients, directions } = formState;
-		if (!title || !img || !url || !ingredients[0] || !directions[0]) {
-			setMessage('Enter all fields');
+		if (props.food) {
+			props.handleUpdate(formState, props.food.id);
 		} else {
-			props.handleAdd(formState);
-			setFormState({
-				title: '',
-				img: '',
-				ingredients: [''],
-				directions: [''],
-				url: '',
-			});
+			const { title, img, url, ingredients, directions } = formState;
+			if (!title || !img || !url || !ingredients[0] || !directions[0]) {
+				setMessage('Enter all fields');
+			} else {
+				props.handleAdd(formState);
+				setFormState({
+					title: '',
+					img: '',
+					ingredients: [''],
+					directions: [''],
+					url: '',
+				});
+			}
 		}
 	}
 	const handleAddInput = (e) => {
@@ -72,7 +76,7 @@ export default function Form(props) {
 					marginLeft: '30%',
 					padding: '5%',
 				}}>
-				<h5>New Food Recipe</h5>
+				<h5>{props.food ? 'Edit Recipe' : 'New Food Recipe'}</h5>
 				<Input
 					type="text"
 					handleChange={handleChange}
