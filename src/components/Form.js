@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Input from './Input';
+import KitchenIcon from '@material-ui/icons/Kitchen';
 
 export default function Form(props) {
 	const [formState, setFormState] = useState({
@@ -37,7 +38,8 @@ export default function Form(props) {
 	}
 
 	return (
-		<div>
+		<div className="card" style={{
+			width: "400px"}}>
 			<form onSubmit={handleSubmit}>
 				<Input
 					type="text"

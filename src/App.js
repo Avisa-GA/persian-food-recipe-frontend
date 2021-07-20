@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import 'materialize-css/dist/css/materialize.min.css';
 import './App.css';
 import Index from './components/Index';
 
