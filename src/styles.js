@@ -43,7 +43,9 @@ export const StyledFooter = styled.footer`
   color: #000000;
 `;
 
-
+export const StyledTitle = styled.p`
+    font-family: var(--title-font);
+`;
 
 export const StyledLayout = styled.div`
   text-align: center;

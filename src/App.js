@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import Index from './pages/Index';
 import Show from './pages/Show';
 import { Switch, Route } from 'react-router-dom';
+import Footer from './components/Footer';
 
 function App() {
 	const [foodsState, setFoodsState] = useState({ foods: [] });
@@ -87,6 +88,7 @@ function App() {
 					)}
 				/>
 			</Switch>
+			<Footer />
 		</StyledLayout>
 	);
 }
