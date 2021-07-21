@@ -41,9 +41,18 @@ export default function About() {
 						ate: mounds of rice seasoned Iranwith saffron, topped with nuts,
 						raisins, and various meats. Dishes such as kofta (KOFtah, meatballs)
 						and pilau (POO-lau) are now common to both Iranians and northern
-						Indians. Several of Iran's most prominent dishes originated from the
-						Greeks, Arabs, Turks, and Russians. Greece invaded present-day Iran
-						in the A.D. 200s, introducing stuffed grape leaves. Yogurt may have
+						Indians.
+					</p>
+					<img
+						style={{ width: '300px' }}
+						src="https://images.unsplash.com/photo-1624991721151-e746c489fedf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+						alt="persepolis"
+					/>
+					<p>
+						{' '}
+						Several of Iran's most prominent dishes originated from the Greeks,
+						Arabs, Turks, and Russians. Greece invaded present-day Iran in the
+						A.D. 200s, introducing stuffed grape leaves. Yogurt may have
 						originated from either Greece or Turkey, where it is also a dietary
 						staple. The Iranian food rules that categorize foods into "hot or
 						"cold" is believed to have been derived from ancient Greek theories
@@ -101,25 +110,34 @@ export default function About() {
 						variety that is usually marked by small "dimples" in the crust.
 						Villages often make their own nân , while those who live in the city
 						are frequently seen leaving bakeries with armfuls of freshly made
-						loaves. Meat, particularly chicken and lamb, is most commonly eaten
-						as kebabs (KEE-bahbs), pieces of meat served on a skewer. Âsh
-						(soups) and khoresh (stews) make popular entrees to most Iranian
-						meals and often contain such meat. Abgoosht (up-GOOSHT) is a hearty
-						soup made of mutton (sheep meat) and chickpeas. Soups are drunk
-						directly from the bowl. Koftas (meatballs), vegetables (such as
-						eggplant), fruits (such as quince, an apple-like fruit), and even
-						yogurt (an Iranian mainstay) are often added to soups and stews.
-						Quinces, pears, grapes, dates, apricots, and Iranian melons flavored
-						with rosewater are typically eaten for dessert. Halva (HAHL-wah, a
-						sesame treat) and baklava (bahk-LAH-vah, crisp paper-like pastry
-						layered with nuts and honey) are common throughout the Middle East.
-						Iranians also love ice cream and puddings. Although sugared chây
-						(tea) is the country's most treasured beverage and ghahvé (coffee)
-						is highly popular, Iranians (particularly children) often enjoy a
-						sweet drink after large meals. Palouden (PAO-loo-den), a rose- and
-						lemon-flavored drink, dugh (sour milk or yogurt mixed with sparkling
-						water) and fresh fruit juices can be made at home or bought in cafes
-						and at street stalls. Read more{' '}
+						loaves.
+					</p>
+					<img
+						style={{ width: '300px' }}
+						src="https://images.unsplash.com/photo-1582231640230-a876a177c229?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+						alt="breads"
+					/>
+					<p>
+						{' '}
+						Meat, particularly chicken and lamb, is most commonly eaten as
+						kebabs (KEE-bahbs), pieces of meat served on a skewer. Âsh (soups)
+						and khoresh (stews) make popular entrees to most Iranian meals and
+						often contain such meat. Abgoosht (up-GOOSHT) is a hearty soup made
+						of mutton (sheep meat) and chickpeas. Soups are drunk directly from
+						the bowl. Koftas (meatballs), vegetables (such as eggplant), fruits
+						(such as quince, an apple-like fruit), and even yogurt (an Iranian
+						mainstay) are often added to soups and stews. Quinces, pears,
+						grapes, dates, apricots, and Iranian melons flavored with rosewater
+						are typically eaten for dessert. Halva (HAHL-wah, a sesame treat)
+						and baklava (bahk-LAH-vah, crisp paper-like pastry layered with nuts
+						and honey) are common throughout the Middle East. Iranians also love
+						ice cream and puddings. Although sugared chây (tea) is the country's
+						most treasured beverage and ghahvé (coffee) is highly popular,
+						Iranians (particularly children) often enjoy a sweet drink after
+						large meals. Palouden (PAO-loo-den), a rose- and lemon-flavored
+						drink, dugh (sour milk or yogurt mixed with sparkling water) and
+						fresh fruit juices can be made at home or bought in cafes and at
+						street stalls. Read more{' '}
 						<a href="http://www.foodbycountry.com/Germany-to-Japan/Iran.html#ixzz71GRDsrpP">
 							here.
 						</a>
