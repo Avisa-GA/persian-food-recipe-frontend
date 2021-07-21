@@ -16,7 +16,7 @@ export default function Food({ food, handleDelete, URL }) {
 			        </button>
 					</div>
 					<div className="card-content">
-                         <span style={{color: "#26a69a ", marginRight: "30%", fontSize: "14px", textAlign: "left"}} className="card-title">
+                         <span style={{color: "#00796b", marginRight: "30%", fontSize: "14px", textAlign: "left"}} className="card-title">
 							{food.title}
 						</span>
 					</div>
