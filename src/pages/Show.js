@@ -25,14 +25,15 @@ export default function Show({ foods, match, history, handleUpdate }) {
 			{toggleForm ? (
 				<Form food={food} handleUpdate={handleUpdate} />
 			) : (
-				<div className="row">
-					<div className="col s12 m6">
+				<div>
+					<div>
 						{food && (
 							<div
 								style={{
-									marginLeft: '20%',
+									width: '80%',
+									margin: 'auto',
 									marginTop: '5%',
-									width: '700px',
+									maxWidth: '700px',
 									height: '100%',
 								}}
 								className="card">
@@ -56,15 +57,16 @@ export default function Show({ foods, match, history, handleUpdate }) {
 									{food.directions.map((direction, index) => (
 										<p key={index}>{direction}</p>
 									))}
-									</div>
-			
+								</div>
 							</div>
 						)}
 					</div>
 				</div>
 			)}
-			<div style={{margin: "auto"}}>
-				<Link style={{marginRight: "5%"}} to="/">Go Back</Link>
+			<div style={{ margin: 'auto', marginTop: '2%' }}>
+				<Link style={{ marginRight: '5%' }} to="/">
+					Go Back
+				</Link>
 				<button
 					className="waves-effect waves-light btn teal lighten-3"
 					onClick={toggleOpenForm}>
