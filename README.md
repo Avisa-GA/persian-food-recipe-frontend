@@ -40,7 +40,7 @@ The Persian Recipe Food App is built with React and styled with Materialize and 
 
 This app displays a collection of recipes highlighting Iranian Cuisine on the Index page. Each dish is showcased in a Show page and has update and delete functionality New recipes may be created and added to the list from a form located on the Index page. The About page details Iranian food history and culture in a toggle format.
 
-The live version of this app can be viewed [here.](INSERT-DEPLOYMENT-LINK-HERE)
+The live version of this app can be viewed [here.](https://cocky-aryabhata-964b73.netlify.app/)
 
 The backend GitHub can be found [here.](https://github.com/Avisa-GA/persian-food-recipe-backend)
 
@@ -49,10 +49,11 @@ The backend GitHub can be found [here.](https://github.com/Avisa-GA/persian-food
 - CSS
 - [JavaScript](https://www.javascript.com/)
 - [Ruby Backend](https://rubyonrails.org/)
-- [Rails Frontend](https://rubyonrails.org/)
+- [Rails Backend](https://rubyonrails.org/)
 - [React](https://reactjs.org/)
 - [React-Router](https://reactrouter.com/)
 - [Material-UI](https://material-ui.com/)
+- [Styled-Components](https://styled-components.com/)
 - [About images from Unsplash.com](https://unsplash.com/)
 
 
