@@ -56,14 +56,15 @@ export default function Show({ foods, match, history, handleUpdate }) {
 									{food.directions.map((direction, index) => (
 										<p key={index}>{direction}</p>
 									))}
-								</div>
+									</div>
+			
 							</div>
 						)}
 					</div>
 				</div>
 			)}
-			<div className="card-action">
-				<Link to="/">Go Back</Link>
+			<div style={{marginRight: "30%"}}>
+				<Link style={{marginRight: "5%"}} to="/">Go Back</Link>
 				<button
 					className="waves-effect waves-light btn teal lighten-3"
 					onClick={toggleOpenForm}>
