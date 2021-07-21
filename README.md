@@ -49,10 +49,11 @@ The backend GitHub can be found [here.](https://github.com/Avisa-GA/persian-food
 - CSS
 - [JavaScript](https://www.javascript.com/)
 - [Ruby Backend](https://rubyonrails.org/)
-- [Rails Frontend](https://rubyonrails.org/)
+- [Rails Backend](https://rubyonrails.org/)
 - [React](https://reactjs.org/)
 - [React-Router](https://reactrouter.com/)
 - [Material-UI](https://material-ui.com/)
+- [Styled-Components](https://styled-components.com/)
 - [About images from Unsplash.com](https://unsplash.com/)
 
 
