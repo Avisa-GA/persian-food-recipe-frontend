@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Input from '../components/Input';
+import { StyledTitle } from '../styles';
 
 export default function Form(props) {
 	const [message, setMessage] = useState('');
@@ -68,7 +69,6 @@ export default function Form(props) {
 	};
 	return (
 		<div>
-			{message && <p>{message}</p>}
 			<form
 				className="card"
 				style={{
@@ -80,6 +80,9 @@ export default function Form(props) {
 				<h5 style={{ color: '#004d40' }}>
 					{props.food ? 'Edit Recipe' : 'New Food Recipe'}
 				</h5>
+				{message && (
+					<StyledTitle style={{ color: 'red' }}>{message}</StyledTitle>
+				)}
 				<Input
 					type="text"
 					handleChange={handleChange}
