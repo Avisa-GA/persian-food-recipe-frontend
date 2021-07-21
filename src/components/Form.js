@@ -67,16 +67,19 @@ export default function Form(props) {
 		}));
 	};
 	return (
-		<div style={{marginTop: "5%"}}>
+		<div>
 			{message && <p>{message}</p>}
 			<form
 				className="card"
 				style={{
-					width: '600px',
-					marginLeft: '20%',
+					maxWidth: '600px',
+					margin: 'auto',
+					marginTop: '5%',
 					padding: '5%',
 				}}>
-				<h5 style={{color: "#004d40"}}>{props.food ? 'Edit Recipe' : 'New Food Recipe'}</h5>
+				<h5 style={{ color: '#004d40' }}>
+					{props.food ? 'Edit Recipe' : 'New Food Recipe'}
+				</h5>
 				<Input
 					type="text"
 					handleChange={handleChange}
