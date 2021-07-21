@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import Input from './Input';
+import Input from '../components/Input';
 
 export default function Form(props) {
 	const [message, setMessage] = useState('');
@@ -67,7 +67,7 @@ export default function Form(props) {
 		}));
 	};
 	return (
-		<div>
+		<div style={{marginTop: "5%"}}>
 			{message && <p>{message}</p>}
 			<form
 				className="card"
@@ -76,7 +76,7 @@ export default function Form(props) {
 					marginLeft: '30%',
 					padding: '5%',
 				}}>
-				<h5>{props.food ? 'Edit Recipe' : 'New Food Recipe'}</h5>
+				<h5 style={{color: "#004d40"}}>{props.food ? 'Edit Recipe' : 'New Food Recipe'}</h5>
 				<Input
 					type="text"
 					handleChange={handleChange}
@@ -108,7 +108,7 @@ export default function Form(props) {
 							onClick={(e) => handleAddInput(e)}
 							name="ingredients"
 							type="button"
-							className="btn-floating btn-tiny waves-effect waves-light green">
+							className="btn-floating btn-tiny waves-effect waves-light  teal darken-3">
 							+
 						</button>
 						<br />
@@ -141,7 +141,7 @@ export default function Form(props) {
 							onClick={(e) => handleAddInput(e)}
 							name="directions"
 							type="button"
-							className="btn-floating btn-tiny waves-effect waves-light green">
+							className="btn-floating btn-tiny waves-effect waves-light  teal darken-3">
 							+
 						</button>
 						<br />
@@ -167,7 +167,7 @@ export default function Form(props) {
 					id="url"
 				/>
 				<button
-					className="btn waves-effect waves-light"
+					className="btn waves-effect waves-light teal darken-3"
 					type="submit"
 					onClick={handleSubmit}>
 					<i className="material-icons right">send</i>

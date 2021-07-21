@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Form from './Form';
+import Form from '../components/Form';
 
 export default function Show({ foods, match, history, handleUpdate }) {
 	const [food, setFood] = useState(null);
