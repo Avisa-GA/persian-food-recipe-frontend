@@ -8,7 +8,7 @@ export default function Header()
     return (
         <StyledHeader>
             <Link to="/">
-                <h5>Persian Recipe Food</h5>
+                <h5>Persian Recipe Foods</h5>
             </Link>
         </StyledHeader>
     )
