@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 import 'materialize-css/dist/css/materialize.min.css';
 
-import { StyledLayout } from "./styles";
-import Header from "./components/Header";
+import { StyledLayout } from './styles';
+import Header from './components/Header';
 import Index from './pages/Index';
 import Show from './pages/Show';
+import About from './pages/About';
 import { Switch, Route } from 'react-router-dom';
 
 function App() {
@@ -75,6 +76,9 @@ function App() {
 						handleDelete={handleDelete}
 						handleAdd={handleAdd}
 					/>
+				</Route>
+				<Route path="/about">
+					<About />
 				</Route>
 				<Route
 					path="/:id"
