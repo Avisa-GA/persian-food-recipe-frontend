@@ -11,7 +11,7 @@ export default function About() {
 
 	return (
 		<div className="container">
-			<StyledTitle style={{ fontSize: '30px', fontWeight: 'bold' }}>
+			<StyledTitle style={{ fontSize: '30px', fontWeight: 'bold', color: "#00796b" }}>
 				About Persian Cuisine
 			</StyledTitle>
 			<br />
