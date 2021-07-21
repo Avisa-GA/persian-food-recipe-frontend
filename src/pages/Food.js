@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function Food({ food, handleDelete, URL }) {
 	return (
-		<div style={{marginLeft: "32%"}} className="row">
+		<div style={{marginLeft: "26%"}} className="row">
 			<div className="col s12 m6 m7">
 				<div className="card medium">
 					<div className="card-image">
@@ -12,7 +12,7 @@ export default function Food({ food, handleDelete, URL }) {
 				            alt={food.title}
 						/>
 					
-						<button style={{marginBottom: "8%", marginLeft: "10%"}} className="btn-floating halfway-fab waves-effect waves-light red" onClick={() => handleDelete(food.id)}><i className="material-icons">delete</i>
+						<button style={{marginBottom: "10%", marginLeft: "10%"}} className="btn-floating halfway-fab waves-effect waves-light red" onClick={() => handleDelete(food.id)}><i className="material-icons">delete</i>
 			        </button>
 					</div>
 					<div className="card-content">
@@ -21,7 +21,7 @@ export default function Food({ food, handleDelete, URL }) {
 						</span>
 					</div>
 					<div className="card-action">
-						<Link style={{ color: "#00695c" }} to={`/${food.id}`}>Show More</Link>
+						<Link to={`/${food.id}`}>Show More</Link>
 					</div>
 				</div>
 			</div>
