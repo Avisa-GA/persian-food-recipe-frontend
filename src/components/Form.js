@@ -72,8 +72,8 @@ export default function Form(props) {
 			<form
 				className="card"
 				style={{
-					width: '400px',
-					marginLeft: '30%',
+					width: '600px',
+					marginLeft: '20%',
 					padding: '5%',
 				}}>
 				<h5 style={{color: "#004d40"}}>{props.food ? 'Edit Recipe' : 'New Food Recipe'}</h5>
