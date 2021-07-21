@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
-// import 'materialize-css/dist/css/materialize.min.css';
-import './App.css';
-import Index from './components/Index';
-import Show from './components/Show';
+import 'materialize-css/dist/css/materialize.min.css';
+
+import { StyledLayout } from "./styles";
+import Header from "./components/Header";
+import Index from './pages/Index';
+import Show from './pages/Show';
 import { Switch, Route } from 'react-router-dom';
 
 function App() {
@@ -63,7 +65,8 @@ function App() {
 	}
 
 	return (
-		<div className="App">
+		<StyledLayout>
+			<Header />
 			<Switch>
 				<Route exact path="/">
 					<Index
@@ -84,7 +87,7 @@ function App() {
 					)}
 				/>
 			</Switch>
-		</div>
+		</StyledLayout>
 	);
 }
 

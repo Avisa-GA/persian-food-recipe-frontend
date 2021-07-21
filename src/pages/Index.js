@@ -1,6 +1,6 @@
 import React from 'react';
-import Foods from './Foods';
-import Form from './Form';
+import Foods from '../pages/Foods';
+import Form from '../components/Form';
 
 export default function Index({ foods, handleDelete, handleAdd, URL }) {
 	return (
