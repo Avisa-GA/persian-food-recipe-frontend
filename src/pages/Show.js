@@ -63,7 +63,7 @@ export default function Show({ foods, match, history, handleUpdate }) {
 					</div>
 				</div>
 			)}
-			<div style={{marginRight: "30%"}}>
+			<div style={{margin: "auto"}}>
 				<Link style={{marginRight: "5%"}} to="/">Go Back</Link>
 				<button
 					className="waves-effect waves-light btn teal lighten-3"
