@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function Food({ food, handleDelete, URL }) {
 	return (
-		<div style={{marginLeft: "26%"}} className="row">
+		<div style={{marginLeft: "30%"}} className="row">
 			<div className="col s12 m6 m7">
 				<div className="card medium">
 					<div className="card-image">
