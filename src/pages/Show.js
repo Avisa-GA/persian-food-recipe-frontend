@@ -57,6 +57,9 @@ export default function Show({ foods, match, history, handleUpdate }) {
 									</div>
 									<div className="card-action">
 										<Link to="/">Go Back</Link>
+										<button className="waves-effect waves-light btn teal lighten-3" onClick={toggleOpenForm}>
+			                     {toggleForm ? 'Back to Recipe' : 'Edit Recipe'}
+	 		                           </button>
 									</div>
 								</div>
 								)
@@ -69,38 +72,5 @@ export default function Show({ foods, match, history, handleUpdate }) {
 		
 	)
 			
-	// return (
-	// 	<>
-	// 		{toggleForm ? (
-	// 			<Form food={food} handleUpdate={handleUpdate} />
-	// 		) : (
-	// 			<div className="container">
-	// 				<Link to="/">Go Back</Link>
-	// 				{food && (
-	// 					<>
-	// 						<img
-	// 							src={food.img}
-	// 							alt={food.title}
-	// 							style={{ width: '300px', height: '300px' }}
-	// 						/>
-	// 						<h3>{food.title}</h3>
-	// 						<ul>
-	// 							{food.ingredients.map((ingredient, index) => (
-	// 								<li key={index}>{ingredient}</li>
-	// 							))}
-	// 						</ul>
-	// 						<div>
-	// 							{food.directions.map((direction, index) => (
-	// 								<p key={index}>{direction}</p>
-	// 							))}
-	// 						</div>
-	// 					</>
-	// 				)}
-	// 			</div>
-	// 		)}
-	// 		<button onClick={toggleOpenForm}>
-	// 			{toggleForm ? 'Back to Recipe' : 'Edit Recipe'}{' '}
-	// 		</button>
-	// 	</>
-	// );
+
 }
