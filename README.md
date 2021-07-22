@@ -38,7 +38,7 @@
 # **About Persian Recipe Food App**
 The Persian Recipe Food App is built with React and styled with Material-ui and Styled components.
 
-This app displays a collection of recipes highlighting Iranian Cuisine on the Index page. Each dish is showcased in a Show page and has update and delete functionality New recipes may be created and added to the list from a form located on the Index page. The About page details Iranian food history and culture in a toggle format.
+This app displays a collection of recipes highlighting Iranian Cuisine on the Index page. Each dish is showcased in a Show page and has update and delete functionality New recipes may be created and added to the list from a form located on the Index page. Users can also upload their own image to a new recipe via Cloudinary.  The About page details Iranian food history and culture in a toggle format.  The search bar allows the user to search recipes by title.  
 
 The live version of this app can be viewed [here.](https://cocky-aryabhata-964b73.netlify.app/)
 
@@ -66,16 +66,15 @@ The backend GitHub can be found [here.](https://github.com/Avisa-GA/persian-food
 ![wireframe](https://i.imgur.com/HRKG7Fl.png)
 
 # **Screenshots**
-![About Page](https://i.imgur.com/BtgqOst.png)
-![Index Page](https://i.imgur.com/2f53zgu.png)
-![Show Page](https://i.imgur.com/m9EPakU.png)
-![Create Recipe](https://i.imgur.com/VtcNLmV.png)
+![About Page](https://i.imgur.com/AwozdSx.png)
+![Index Page](https://i.imgur.com/JckKOAz.png)
+![Show Page](https://i.imgur.com/CqFdniN.png)
+![Create Recipe](https://i.imgur.com/PFAimA5.png)
 
 
 # **Future Enhancements**
 * Ability for users to add a recipe review
-* Ability for users to search recipes by tag/name
-* Ability for users to upload their own image through cloudinary
+
 
 # **Authors**
 
