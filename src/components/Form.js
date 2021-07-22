@@ -7,7 +7,9 @@ import { uploadPostImage } from '../services/postImage';
 export default function Form(props) {
 	const [message, setMessage] = useState('');
 	const [fileName, setFileName] = useState('');
-	const [imgFromCloud, setImgFromCloud] = useState('');
+	const [imgFromCloud, setImgFromCloud] = useState({
+		data: { secure_url: '' },
+	});
 	const [formState, setFormState] = useState({
 		title: '',
 		ingredients: [''],
@@ -18,7 +20,7 @@ export default function Form(props) {
 	useEffect(() => {
 		if (props.food) {
 			setFormState(props.food);
-			setImgFromCloud([props.food.img]);
+			setImgFromCloud({ data: { secure_url: props.food.img } });
 		}
 	}, [props.foods]);
 
@@ -54,7 +56,6 @@ export default function Form(props) {
 	async function handleSubmit(event) {
 		event.preventDefault();
 		if (props.food) {
-			console.log('updating here. imgFromCloud is:', imgFromCloud);
 			props.handleUpdate(
 				{ ...formState, img: imgFromCloud.data.secure_url },
 				props.food.id
@@ -77,6 +78,7 @@ export default function Form(props) {
 					directions: [''],
 					url: '',
 				});
+				setImgFromCloud({ data: { secure_url: '' } });
 				setFileName('');
 			}
 		}
@@ -133,7 +135,13 @@ export default function Form(props) {
 						<input
 							className="file-path validate"
 							type="text"
-							value={fileName ? fileName : props.food ? imgFromCloud : ''}
+							value={
+								fileName
+									? fileName
+									: props.food
+									? imgFromCloud.data.secure_url
+									: ''
+							}
 							onChange={() => {}}
 						/>
 					</div>
