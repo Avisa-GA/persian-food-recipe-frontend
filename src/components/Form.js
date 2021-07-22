@@ -10,7 +10,6 @@ export default function Form(props) {
 	const [imgFromCloud, setImgFromCloud] = useState('');
 	const [formState, setFormState] = useState({
 		title: '',
-
 		ingredients: [''],
 		directions: [''],
 		url: '',
@@ -19,6 +18,7 @@ export default function Form(props) {
 	useEffect(() => {
 		if (props.food) {
 			setFormState(props.food);
+			setImgFromCloud([props.food.img]);
 		}
 	}, [props.foods]);
 
@@ -40,16 +40,13 @@ export default function Form(props) {
 
 	async function handleImageFile(e) {
 		const file = e.target.files[0];
-		//setFormState((prevState) => ({ ...prevState, img: file }));
 		setFileName(file.name);
 		if (file) {
 			let imageData;
-
 			const data = new FormData();
 			data.append('file', file);
 			data.append('upload_preset', 'ljxjnqss');
 			imageData = await uploadPostImage(data);
-			console.log('image data result:', imageData);
 			setImgFromCloud(imageData);
 		}
 	}
@@ -57,7 +54,11 @@ export default function Form(props) {
 	async function handleSubmit(event) {
 		event.preventDefault();
 		if (props.food) {
-			props.handleUpdate(formState, props.food.id);
+			console.log('updating here. imgFromCloud is:', imgFromCloud);
+			props.handleUpdate(
+				{ ...formState, img: imgFromCloud.data.secure_url },
+				props.food.id
+			);
 		} else {
 			const { title, url, ingredients, directions } = formState;
 			if (
@@ -69,11 +70,9 @@ export default function Form(props) {
 			) {
 				setMessage('Enter all fields');
 			} else {
-				console.log('cloud image', imgFromCloud);
 				props.handleAdd({ ...formState, img: imgFromCloud.data.secure_url });
 				setFormState({
 					title: '',
-
 					ingredients: [''],
 					directions: [''],
 					url: '',
@@ -134,7 +133,7 @@ export default function Form(props) {
 						<input
 							className="file-path validate"
 							type="text"
-							value={fileName}
+							value={fileName ? fileName : props.food ? imgFromCloud : ''}
 							onChange={() => {}}
 						/>
 					</div>
