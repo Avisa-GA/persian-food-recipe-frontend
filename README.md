@@ -36,7 +36,7 @@
 
 <!-- ABOUT THE PROJECT -->
 # **About Persian Recipe Food App**
-The Persian Recipe Food App is built with React and styled with Materialize and Material UI components.
+The Persian Recipe Food App is built with React and styled with Material-ui and Styled components.
 
 This app displays a collection of recipes highlighting Iranian Cuisine on the Index page. Each dish is showcased in a Show page and has update and delete functionality New recipes may be created and added to the list from a form located on the Index page. The About page details Iranian food history and culture in a toggle format.
 
