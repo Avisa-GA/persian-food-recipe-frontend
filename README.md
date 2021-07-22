@@ -55,7 +55,7 @@ The backend GitHub can be found [here.](https://github.com/Avisa-GA/persian-food
 - [Material-UI](https://material-ui.com/)
 - [Styled-Components](https://styled-components.com/)
 - [About images from Unsplash.com](https://unsplash.com/)
-- [Cloudinary)[https://cloudinary.com/]
+- [Cloudinary][https://cloudinary.com/]
 
 
 
