@@ -14,16 +14,17 @@ function App() {
 	const URL = 'https://persian-food-backend.herokuapp.com/foods';
 
 	useEffect(() => {
-		async function getFoods() {
-			try {
-				const foods = await fetch(URL).then((response) => response.json());
-				setFoodsState({ foods });
-			} catch (error) {
-				console.log(error);
-			}
-		}
 		getFoods();
 	}, []);
+
+	async function getFoods() {
+		try {
+			const foods = await fetch(URL).then((response) => response.json());
+			setFoodsState({ foods });
+		} catch (error) {
+			console.log(error);
+		}
+	}
 
 	async function handleAdd(formInputs) {
 		try {
@@ -66,9 +67,16 @@ function App() {
 		}
 	}
 
+	const handleSearch = (str) => {
+		let searchResult = foodsState.foods.filter((food) =>
+			food.title.toLowerCase().includes(str.toLowerCase())
+		);
+		setFoodsState({ foods: [...searchResult] });
+	};
+
 	return (
 		<StyledLayout>
-			<Header />
+			<Header handleSearch={handleSearch} getFoods={getFoods} />
 			<Switch>
 				<Route exact path="/">
 					<Index
