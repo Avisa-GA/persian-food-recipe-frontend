@@ -7,7 +7,6 @@ async function uploadPostImage(data) {
 		method: 'POST',
 		data,
 	});
-	//console.log("image cloudinary is here:", dataImage)
 	return dataImage;
 }
 

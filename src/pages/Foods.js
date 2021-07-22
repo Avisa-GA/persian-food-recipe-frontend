@@ -2,7 +2,7 @@ import React from 'react';
 import Food from './Food';
 import { StyledTitle } from '../styles';
 
-export default function Foods({ foods, handleDelete, URL }) {
+export default function Foods({ foods, handleDelete}) {
 	return (
 		<ul style={{ marginTop: '5%' }} className="collection with-header">
 			<li className="collection-header">
@@ -18,7 +18,6 @@ export default function Foods({ foods, handleDelete, URL }) {
 					{foods.map((food) => (
 						<Food
 							key={food.id}
-							URL={URL}
 							food={food}
 							handleDelete={handleDelete}
 						/>

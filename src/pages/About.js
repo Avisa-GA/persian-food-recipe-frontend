@@ -3,8 +3,11 @@ import { StyledTitle } from '../styles';
 import { Grid } from '@material-ui/core';
 
 export default function About() {
+
+	// define a state to toggle between two button
 	const [toggleText, setToggleText] = useState(false);
 
+	// and give an action to changin state
 	const handleToggle = () => {
 		setToggleText(!toggleText);
 	};

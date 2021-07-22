@@ -1,9 +1,8 @@
-import { Link, useHistory } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import { StyledHeader } from '../styles';
 import SearchForm from './SearchForm';
 
 export default function Header({ handleSearch, getFoods }) {
-	const history = useHistory();
 
 	return (
 		<StyledHeader>

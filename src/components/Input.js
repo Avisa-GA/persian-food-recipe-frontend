@@ -1,3 +1,5 @@
+
+// * Define a custom Input and call in form
 function Input({ name, title, type, value, placeholder, handleChange }) {
 	return (
 		<>

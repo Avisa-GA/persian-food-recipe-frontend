@@ -2,11 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Grid } from '@material-ui/core';
 
-export default function Food({ food, handleDelete, URL }) {
+export default function Food({ food, handleDelete}) {
+// * ****************************************** Show the Index page also we can delete
 	return (
 		<Grid container direction="row" justifyContent="center" alignItems="center">
 			<Grid item xs={12} sm={6} md={6} lg={5}>
-				<div className="card medium">
+				<div className="card large">
 					<div className="card-image">
 						<img src={food.img} alt={food.title} />
 

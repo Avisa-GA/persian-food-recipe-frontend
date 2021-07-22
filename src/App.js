@@ -13,10 +13,11 @@ function App() {
 	const [foodsState, setFoodsState] = useState({ foods: [] });
 	const URL = 'https://persian-food-backend.herokuapp.com/foods';
 
+	// ? UseEffect to Show all foods
 	useEffect(() => {
 		getFoods();
 	}, []);
-
+// * ******************************* Index
 	async function getFoods() {
 		try {
 			const foods = await fetch(URL).then((response) => response.json());
@@ -25,7 +26,7 @@ function App() {
 			console.log(error);
 		}
 	}
-
+// * ************************************ Create
 	async function handleAdd(formInputs) {
 		try {
 			const foods = await fetch(URL, {
@@ -41,7 +42,7 @@ function App() {
 			console.log(error);
 		}
 	}
-
+// * ******************************************* Update
 	async function handleUpdate(formInputs, id) {
 		try {
 			const { title, ingredients, img, directions, url } = formInputs;
@@ -50,12 +51,13 @@ function App() {
 				headers: { 'Content-type': 'Application/json' },
 				body: JSON.stringify({ title, ingredients, img, directions, url }),
 			}).then((response) => response.json());
+			
 			setFoodsState({ foods });
 		} catch (err) {
 			console.log(err);
 		}
 	}
-
+// ! ************************************************ Delete
 	async function handleDelete(foodId) {
 		try {
 			const foods = await fetch(`${URL}/${foodId}`, {
@@ -66,7 +68,7 @@ function App() {
 			console.log(error);
 		}
 	}
-
+ // ? ************************************************* Search
 	const handleSearch = (str) => {
 		let searchResult = foodsState.foods.filter((food) =>
 			food.title.toLowerCase().includes(str.toLowerCase())
