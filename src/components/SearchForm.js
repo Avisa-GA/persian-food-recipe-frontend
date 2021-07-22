@@ -3,6 +3,7 @@ import { IconButton } from '@material-ui/core';
 import { Search } from '@material-ui/icons';
 
 export default function SearchForm({ handleSearch, getFoods }) {
+	
 	const [searchValue, setSearchValue] = useState('');
 // ******************************** handleChange
 	const handleChange = (e) => {
@@ -11,7 +12,7 @@ export default function SearchForm({ handleSearch, getFoods }) {
 		}
 		setSearchValue(e.target.value);
 	};
-	
+
 // ******************************* handleSubmit
 	const handleSubmit = (e) => {
 		e.preventDefault();

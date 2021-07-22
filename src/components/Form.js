@@ -39,7 +39,7 @@ export default function Form(props) {
 
 	// * handleChange function pass to each input for update their data state
 	function handleChange(event, index = null) {
-
+// ! ******************************************************
 		/* because We have two array elements , we check if index of those Array element
 		not null if not 👇
 		*/
@@ -130,7 +130,7 @@ export default function Form(props) {
 		setFormState((prevState) => ({
 			...prevState,
 			[e.target.name]: [...formState[e.target.name]].filter(
-				(id) => id !== index
+				(item, id) => id !== index
 			),
 		}));
 	};
@@ -183,7 +183,7 @@ export default function Form(props) {
 					</div>
 				</div>
 
-				{formState.ingredients.map((index) => (
+				{formState.ingredients.map((ingredient, index) => (
 					<div style={{ display: 'flex', marginRight: '20%' }} key={index}>
 						<input
 							type="text"
